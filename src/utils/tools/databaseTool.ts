@@ -1,3 +1,4 @@
+import { db } from "@/db/drizzle";
 import { tool } from "ai";
 import z from "zod";
 
@@ -8,7 +9,7 @@ export const databaseTool = tool({
     query: z.string().describe("The SQL query to be executed on the database."),
   }),
   execute: async ({ query }) => {
-    console.log("🧠 Executing query:", query);
-    return "✅ Query received successfully (mock result).";
+    const result = await db.execute(query);
+    return JSON.stringify(result, null, 2);
   },
 });
