@@ -1,5 +1,5 @@
 import { SYSTEM_PROMPT } from "@/utils/agentPrompt";
-import { TOOLS } from "@/utils/tools";
+import { TOOLS } from "@/app/api/chat/tools";
 import { google } from "@ai-sdk/google";
 import { streamText, UIMessage, convertToModelMessages, stepCountIs } from "ai";
 
