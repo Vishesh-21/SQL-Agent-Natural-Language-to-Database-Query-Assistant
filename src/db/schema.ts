@@ -1,4 +1,3 @@
-import { create } from "domain";
 import {
   pgTable,
   serial,
@@ -16,7 +15,7 @@ export const productTable = pgTable("products", {
   createdAt: text("created_at").notNull().default(new Date().toISOString()),
 });
 
-export const salesTabl = pgTable("sales", {
+export const salesTable = pgTable("sales", {
   id: serial("id").primaryKey(),
   productId: integer("product_id")
     .notNull()
